@@ -5,12 +5,13 @@
 ![logo](static/yarn.png)
 
 - [安裝所需要的軟件(安裝所需要的 package之前這以下的軟件要先安裝)](#安裝所需要的軟件)
+  - [Xcode](#xcode)
+  - [AndroidStudio](#androidstudio)
+  - [Homebrew](#homebrew)
   - [Nodejs](#nodejs)
   - [Yarn](#yarn)
   - [React Native](#react-native)
-  - [Xcode](#xcode)
   - [Java](#java)
-  - [AndroidStudio](#androidstudio)
   - [Cocoapods](#cocoapods)
 
 - [安裝所需要的 package](#安裝所需要的package)
@@ -33,6 +34,40 @@
 ---
 
 ## 安裝所需要的軟件
+
+## 如果在 terminal 輸入指令出現 Permission denied error， 在指令最前輸入 sudo，然後等會會叫你輸入電腦密碼
+
+## Xcode
+
+- [網站](https://yarnpkg.com/lang/en/docs/install/#mac-stable)
+
+只要 mac 有，請在 app store 下載
+
+![](static/12.png)
+
+
+---
+
+## AndroidStudio
+
+- [網站](https://developer.android.com/studio)
+
+![](static/13.png)
+
+---
+
+## Homebrew
+
+- [網站](https://brew.sh/)
+
+在 terminal 輸入了以下程式碼，然後按下回車
+
+```
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+---
+
 ## Nodejs
 
 - [網站](https://nodejs.org/en/)
@@ -74,17 +109,6 @@ npm install -g react-native-cli
 
 ---
 
-## Xcode
-
-- [網站](https://yarnpkg.com/lang/en/docs/install/#mac-stable)
-
-只要 mac 有，請在 app store 下載
-
-![](static/12.png)
-
-
----
-
 ## Java
 
 - [網站](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
@@ -92,14 +116,6 @@ npm install -g react-native-cli
 請下載自己電腦所對應的版本
 
 ![](static/11.png)
-
----
-
-## AndroidStudio
-
-- [網站](https://developer.android.com/studio)
-
-![](static/13.png)
 
 ---
 
