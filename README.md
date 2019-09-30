@@ -41,7 +41,7 @@
 
 - [網站](https://yarnpkg.com/lang/en/docs/install/#mac-stable)
 
-只要 mac 有，請在 app store 下載
+只有 mac 機可以安裝，請在 app store 下載
 
 ![](static/12.png)
 
