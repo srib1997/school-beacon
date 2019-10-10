@@ -249,7 +249,7 @@ pod 'react-native-ble-plx-swift', :path => '../node_modules/react-native-ble-plx
 然後在 termainl 中輸入以下程式碼，然後按下回車
 
 ```
-pod install
+cd ios && pod install
 ```
 
 ![](static/7.png)
