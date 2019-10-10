@@ -27,6 +27,8 @@
   - [react-native-youtube](https://github.com/inProgress-team/react-native-youtube)
   - [react-native-webview](https://github.com/react-native-community/react-native-webview)
 
+- [先體驗 App 的結果](#體驗App的結果)
+
 - [生成 app 上傳](#生成app上傳)
   - [ios bundle](#iosbundle)
   - [android bundle](#androidbundle)
@@ -391,6 +393,24 @@ import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView;
   }
 ```
 ![](static/1.png)
+
+## 體驗App的結果
+
+把 App 資料夾的 App.js 文檔的代碼，取代自己項目根目錄的 App.js, 再將 screen 資料夾複製去根目錄底下。
+
+然後打開 xcode , 選擇自己的 probject, 
+
+在 xcode 中檢查一下有沒有 team
+
+![](static/30.png)
+
+然後選擇自己的手機再按 build and then run the current scheme
+
+![](static/36.png)
+![](static/37.png)
+![](static/38.png)
+
+---
 
 ## 生成app上傳
 
