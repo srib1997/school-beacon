@@ -461,4 +461,3 @@ react-native bundle --entry-file index.js --platform ios --dev false --bundle-ou
 - [網站](https://facebook.github.io/react-native/docs/signed-apk-android)
 
 ---
-
