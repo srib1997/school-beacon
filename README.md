@@ -396,7 +396,7 @@ import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView;
 
 ## 體驗App的結果
 
-把 App 資料夾的 App.js 文檔的代碼，取代自己項目根目錄的 App.js, 再將 screen 資料夾複製去根目錄底下。
+把 App 資料夾的 App.js 文檔的代碼，取代自己項目根目錄的 App.js, 再將 screen 資料夾, datas.js 和 homeDatas.js 文檔複製去根目錄底下。
 
 然後打開 xcode , 選擇自己的 probject, 
 
