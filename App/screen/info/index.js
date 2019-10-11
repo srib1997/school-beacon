@@ -19,15 +19,17 @@ class Info extends Component {
     this.props.navigation.goBack()
   }
 
-  goToInfoData = (data) => {
+  goToInfoData = (data, name) => {
     this.props.navigation.navigate('InfoData', {
-      data
+      data,
+      name
     })
   }
 
   render () {
     const { navigation } = this.props
     const { data: datas, name } = navigation.state.params
+    console.log(datas, name)
     return (
       <Container>
         {/* 頂部 */}
@@ -52,16 +54,16 @@ class Info extends Component {
           data={datas}
           renderItem={
             ({ item: data }) =>
-              <ListItem thumbnail onPress={() => this.goToInfoData(data)}>
+              <ListItem thumbnail onPress={() => this.goToInfoData(data.content, data.name)}>
                 <Left>
-                  <Thumbnail square source={{ uri: data.img }} />
+                  <Thumbnail square source={{ uri: data.image }} />
                 </Left>
                 <Body>
                   <Text>
                     {data.name}
                   </Text>
                   <Text numberOfLines={1} note>
-                    {data.note}
+                    {data.info}
                   </Text>
                 </Body>
                 <Right />

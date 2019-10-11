@@ -10,7 +10,7 @@ import {
   Title,
   ListItem
 } from 'native-base'
-
+import { FlatList } from 'react-native'
 const datas = require('../../homeDatas.js')
 
 class Home extends Component {
@@ -36,8 +36,29 @@ class Home extends Component {
           <Right />
         </Header>
 
+        <FlatList
+          data={datas}
+          renderItem={
+            ({ item: data }) =>
+              <ListItem thumbnail onPress={() => this.goToInfo(data.room, data.name)}>
+                <Left>
+                  <Thumbnail square source={{ uri: data.image }} />
+                </Left>
+                <Body>
+                  <Text>
+                    {data.name}
+                  </Text>
+                  <Text numberOfLines={1} note>
+                    {data.info}
+                  </Text>
+                </Body>
+                <Right />
+              </ListItem>
+          }
+          keyExtractor={item => `homepage${item.name}`}
+        />
         {/* 資料 */}
-        <ListItem thumbnail onPress={() => this.goToInfo(datas.first, '地下')}>
+        {/* <ListItem thumbnail onPress={() => this.goToInfo(datas.first, '地下')}>
           <Left>
             <Thumbnail square source={{ uri: datas.first[0].img }} />
           </Left>
@@ -80,7 +101,7 @@ class Home extends Component {
             </Text>
           </Body>
           <Right />
-        </ListItem>
+        </ListItem> */}
 
       </Container>
     )

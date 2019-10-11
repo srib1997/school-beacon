@@ -14,7 +14,7 @@ import {
   Button
 } from 'native-base'
 import { BleManager } from 'react-native-ble-plx'
-import { Platform, Alert, DeviceEventEmitter, Image } from 'react-native'
+import { Platform, Alert, DeviceEventEmitter, Image, FlatList } from 'react-native'
 import { withNavigationFocus } from 'react-navigation'
 import Beacons from 'react-native-beacons-manager'
 import _ from 'lodash'
@@ -50,17 +50,6 @@ class Classroom extends Component {
     // 取消偵測 beacons
     subscription.remove()
   }
-
-  // shouldComponentUpdate = async (nextProps, nextState) => {
-  //   if (nextProps.isFocused) {
-  //     console.log('classroom page true')
-  //     await this.checkBLEState()
-  //     return true
-  //   } else {
-  //     console.log('classroom page false')
-  //     return false
-  //   }
-  // }
 
   // 開始掃瞄四周Beacon 裝置
   onScanBeacons = async () => {
@@ -214,6 +203,7 @@ class Classroom extends Component {
   }
 
   render () {
+    console.log('this.state.nearClassroom: ', this.state.nearClassroom)
     return (
       <Container>
         <Header>
@@ -229,24 +219,43 @@ class Classroom extends Component {
             <Icon name='refresh' onPress={() => this.refresh()} size={30} />
           </Right>
         </Header>
-        <Content>
-          <Image source={{ uri: this.state.nearClassroom ? this.state.nearClassroom.img : null }} style={{ height: 200, width: null }} resizeMode='contain' />
-          {this.state.nearClassroom.video
-            ? Platform.OS === 'ios'
-              ? <YouTube
-                videoId={this.state.nearClassroom.video} // The YouTube video ID
-                play={false} // control playback of video with true/false
-                fullscreen={false} // control whether the video should play in fullscreen or inline
-                controls={1}
-                style={{ alignSelf: 'stretch', height: 240 }}
-              />
-              : <WebView
-                source={{ uri: `https://www.youtube.com/embed/${this.state.nearClassroom.video}?version=3&enablejsapi=1&rel=0&autoplay=1&showinfo=0&controls=1&modestbranding=0` }}
-                style={{ height: 240, width: '100%', justifyContent: 'center', alignItems: 'center', backgroundColor: 'black' }}
-              />
-            : null}
-          <Text style={{ lineHeight: 20, paddingTop: 20, paddingLeft: 15, paddingRight: 15, letterSpacing: 2 }}>{this.state.nearClassroom ? this.state.nearClassroom.note : 'loading...'}</Text>
-        </Content>
+        <FlatList
+          data={this.state.nearClassroom.content}
+          renderItem={
+            ({ item: data }) =>
+              <Content>
+                {
+                  data.image
+                    ? <Image source={{ uri: data ? data.image : null }} style={{ height: 200, width: null }} resizeMode='contain' />
+                    : null
+                }
+
+                {
+                  data.video
+                    ? Platform.OS === 'ios'
+                      ? <YouTube
+                        videoId={data.video} // The YouTube video ID
+                        fullscreen={false} // control whether the video should play in fullscreen or inline
+                        controls={1}
+                        style={{ alignSelf: 'stretch', height: 240 }}
+                      />
+                      : <WebView
+                        source={{ uri: `https://www.youtube.com/embed/${data.video}?version=3&enablejsapi=1&rel=0&autoplay=1&showinfo=0&controls=1&modestbranding=0` }}
+                        style={{ height: 240, width: '100%', justifyContent: 'center', alignItems: 'center', backgroundColor: 'black' }}
+                      />
+                    : null
+                }
+
+                {
+                  data.note
+                    ? <Text style={{ lineHeight: 20, paddingTop: 20, paddingLeft: 15, paddingRight: 15, letterSpacing: 2 }}>{data ? data.note : 'loading...'}</Text>
+                    : null
+                }
+
+              </Content>
+          }
+          keyExtractor={(item, index) => `Classroom${index}`}
+        />
 
         {
           this.state.firstDetectBeacon && this.state.secondDetectBeacon && this.state.thirdDetectBeacon
