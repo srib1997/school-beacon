@@ -33,6 +33,8 @@
   - [ios bundle](#iosbundle)
   - [android bundle](#androidbundle)
 
+- [terminal 小教學](#terminal小教學)
+
 ---
 
 ## 安裝所需要的軟件
@@ -461,3 +463,14 @@ react-native bundle --entry-file index.js --platform ios --dev false --bundle-ou
 - [網站](https://facebook.github.io/react-native/docs/signed-apk-android)
 
 ---
+
+## terminal小教學
+
+ls: list directory contents，顯示該目錄下的所有內容。
+cd: change directory，變換當前的目錄。(當目錄有空白或特殊符號([]，!，$，&，*，;，|，)時，得用\來將它格開。)
+pwd: print working directory，顯示目前所在的目錄。
+mdir: make diretory，新增一個資料夾。
+cp: copy，就像Ctrl+C複製的意思。
+mv: move，用來移動資料夾或檔案。
+rm: remove，用來刪除資料。
+sudo: super user do，使用電腦中的最高權限，也就是root帳戶，所以當在執行時，會要求輸入密碼。
