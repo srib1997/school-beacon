@@ -33,7 +33,7 @@
   - [ios bundle](#iosbundle)
   - [android bundle](#androidbundle)
 
-- [terminal 小教學](#terminal小教學)
+- [terminal 小教學](#terminal教學)
 
 ---
 
@@ -464,7 +464,7 @@ react-native bundle --entry-file index.js --platform ios --dev false --bundle-ou
 
 ---
 
-## terminal小教學
+## terminal教學
 
 ls: list directory contents，顯示該目錄下的所有內容。
 
